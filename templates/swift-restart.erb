@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Swift proxy on $HOSTNAME restarted by Monit" | hipchat-cli -t 0d759884835901984423aa03b9b45a -r 291832 -f "Monit"
+service swift-proxy restart
+

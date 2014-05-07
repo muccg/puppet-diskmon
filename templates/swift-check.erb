@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export OS_AUTH_URL=https://keystone.bioplatforms.com/v2.0/
+export OS_USERNAME=gbowland
+export OS_PASSWORD=wombles99
+export OS_TENANT_NAME=bpa
+
+/usr/local/bin/swift -v --os-storage-url http://10.0.1.134:8888/v1/AUTH_b154c0aff02345fba80bd118a54177ea list >/dev/null 2>&1
+
