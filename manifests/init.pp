@@ -1,4 +1,4 @@
-class gbmon {
+class diskmon {
 
   
   package { 'heirloom-mailx':
@@ -25,7 +25,7 @@ class gbmon {
     owner   => root,
     group   => root,
     mode   => 755,
-    content => template("gbmon/hipchat-cli.erb"),
+    content => template("diskmon/hipchat-cli.erb"),
     # notify  => Service['swift-proxy'],
     # require => Package['swift-proxy'],
   }
@@ -35,7 +35,7 @@ class gbmon {
     owner   => root,
     group   => root,
     mode   => 755,
-    content => template("gbmon/swift-check.erb"),
+    content => template("diskmon/swift-check.erb"),
     # notify  => Service['swift-proxy'],
     # require => Package['swift-proxy'],
   }
@@ -45,7 +45,7 @@ class gbmon {
     owner   => root,
     group   => root,
     mode   => 755,
-    content => template("gbmon/swift-restart.erb"),
+    content => template("diskmon/swift-restart.erb"),
     # notify  => Service['swift-proxy'],
     # require => Package['swift-proxy'],
   }
@@ -57,12 +57,12 @@ class gbmon {
 
   file { '/etc/smartd.conf':
     ensure  => present,
-    content => template("gbmon/smartd.conf.erb"),
+    content => template("diskmon/smartd.conf.erb"),
   }
 
   file { '/etc/postfix/main.cf':
     ensure  => present,
-    content => template("gbmon/main.cf.erb"),
+    content => template("diskmon/main.cf.erb"),
     require => Package['postfix'],
   }
 
